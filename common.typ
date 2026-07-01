@@ -16,6 +16,9 @@
   doc
 }
 
+#let int(s) = $#s^circle.small$
+#let cl(s) = math.overline(s)
+
 #let obj = (
   tilde: $#h(0pt)tilde#h(3pt)$
 )
