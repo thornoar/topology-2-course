@@ -1,4 +1,5 @@
 #import "@local/common:0.0.0": *
+#import "@preview/equate:0.3.2": equate
 
 #let title-rule(
   title: [title]
@@ -6,6 +7,9 @@
   set page("a4", margin: 0.5in)
   set text(size: 12pt, lang: "ru")
   set heading(numbering: "1.")
+
+  set math.equation(numbering: "(1)", supplement: none)
+  show: equate.with(sub-numbering: false, number-mode: "label")
 
   align(center)[
     #text(strong(title), size: 20pt)\
