@@ -11,6 +11,8 @@
   set math.equation(numbering: "(1)", supplement: none)
   show: equate.with(sub-numbering: false, number-mode: "label")
 
+  show link: underline
+
   align(center)[
     #text(strong(title), size: 20pt)\
     #v(-5pt)
