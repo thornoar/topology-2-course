@@ -300,15 +300,28 @@
     abs(f(x) - f_m (x)) <= abs(f(x) - f(x_0)) + abs(f(x_0) - f_m (x_0)) + abs(f_m (x_0) - f_m (x)) < epsilon ==> x in P_m (epsilon).
   $
   Отсюда мы заключаем, что $x_0 in int((P_m (epsilon)))$, а значит $x_0 in G(epsilon)$.\
-  Теперь рассмотрим произвольное $epsilon > 0$ и заметим, что $X = union.big_(m in NN) P_m (epsilon)$, так как $f_m (x) -> f(x)$ для каждой точки $x in X$. Кроме того, множества $P_m (epsilon) without int((P_m (epsilon)))$ замкнуты и нигде не плотны (упражнение). Тогда по теореме Бэра множество
+
+  Пусть теперь $epsilon > 0$. Мы покажем, что $G(epsilon)^C$ --- множество I категории. Положим
   $
-    G(epsilon)^C = X without union.big_(m in NN) int((P_m (epsilon))) = (union.big_(m in NN) P_M (epsilon)) without (union.big_(m in NN) int((P_m (epsilon)))) subset union.big_(m in NN) (P_m (epsilon) without int(P_m (epsilon)))
+    F_m (epsilon) = { x in X mid(|) forall k in NN wh abs(f_m (x) - f_(m+k)(x)) <= epsilon }.
   $
-  нигде не плотно (упражнение). Следовательно, множество
+  Заметим, что множества $F_m (epsilon)$ замкнуты, а также
   $
-    A^C = (inter.big_(n in NN) G(1\/n))^C = union.big_(n in NN) G(1\/n)^C
+    int((cl(F_m (epsilon) without int(F_m (epsilon))))) = int((F_m (epsilon) without int(F_m (epsilon)))) = empty,
   $
-  относится к I категории.
+  а значит $F_m (epsilon) without int(F_m (epsilon))$ нигде не плотно для всех $m in NN$. Кроме того, так как $f_n (x) stretch(->)_(n -> oo) (x)$ для всех $x in X$, мы имеем
+  $
+    F_m (epsilon) subset P_m (epsilon), quad X = union.big_(m in NN) F_m (epsilon).
+  $
+  Следовательно,
+  $
+    G(epsilon)^C subset X without union.big_(m in NN) int(F_m (epsilon)) = (union.big_(m in NN) F_m (epsilon)) without union.big_(m in NN) int(F_m (epsilon)) subset union.big_(m in NN) (F_m (epsilon) without int(F_m (epsilon))),
+  $
+  а значит $G(epsilon)^C$ относится к I категории Бэра. Наконец, множество
+  $
+    A^C = union.big_(n in NN) G(1\/n)^C
+  $
+  принадлежит I категории, что и требовалось доказать.
 ]
 
 #cor[
